@@ -19,13 +19,14 @@ def translate_it(text, in_lang, out_lang):
     :return: <str> translated text.
     """
     url = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
-    # key = 'trnsl.1.1.20161025T233221Z.47834a66fd7895d0.a95fd4bfde5c1794fa433453956bd261eae80152'
+    # key = 'trnsl.1.1.20161025T233221Z.47834a66fd7895d0.
+    # a95fd4bfde5c1794fa433453956bd261eae80152'
 
-    key = 'trnsl.1.1.20180508T175323Z.83fa959898aa274d.1cfaf858cffdc77bd24df269b386d4e7845c32e0'
-
+    key = 'trnsl.1.1.20180508T175323Z.83fa959898aa274d.' \
+          '1cfaf858cffdc77bd24df269b386d4e7845c32e0'
 
     # Use this for autodetection original language
-    #url_lang_detect = 'https://translate.yandex.net/api/v1.5/tr.json/detect'
+    # url_lang_detect = 'https://translate.yandex.net/api/v1.5/tr.json/detect'
     #
     # params_post = {
     #     'key': key,
@@ -76,8 +77,10 @@ def translated_text():
         with open(input_data_set[0], encoding='utf-8') as f:
             output_data_set = output_data()
             with open(output_data_set[0], 'w', encoding='utf-8') as ff:
-                ff.write(translate_it(f.read(), input_data_set[1],
-                        output_data_set[1])
+                ff.write(
+                    translate_it(f.read(),
+                        input_data_set[1], output_data_set[1]
+                    )
                 )
 
 
