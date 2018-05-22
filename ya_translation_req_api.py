@@ -71,11 +71,16 @@ def output_data():
 
 
 def translated_text():
-    input_data_set = input_data()
-    with open(input_data_set[0], encoding='utf-8') as f:
-        output_data_set = output_data()
-        with open(output_data_set[0], 'w', encoding='utf-8') as ff:
-            ff.write(translate_it(f.read(), input_data_set[1], output_data_set[1]))
+
+        input_data_set = input_data()
+        with open(input_data_set[0], encoding='utf-8') as f:
+            output_data_set = output_data()
+            with open(output_data_set[0], 'w', encoding='utf-8') as ff:
+                ff.write(translate_it(f.read(), input_data_set[1],
+                        output_data_set[1])
+                )
 
 
-translated_text()
+if __name__ == '__main__':
+    translated_text()
+
